@@ -71,7 +71,7 @@ def opcua_server_thread(shared_data, ip, port):
         while True:
             valor_actual = shared_data.get_senoidal()
             var_senoidal.write_value(valor_actual)
-            time.sleep(0.1)
+            time.sleep(0.05)
     except Exception as e:
         print(f"[Hilo 2] Error: {e}")
     finally:
@@ -89,7 +89,7 @@ def udp_bridge_thread(shared_data, target_ip, target_port):
             
             sock.sendto(json_msg.encode('utf-8'), (target_ip, target_port))
             
-            time.sleep(0.1) 
+            time.sleep(0.05) 
             
     except Exception as e:
         print(f"[Hilo 3] Error: {e}")
