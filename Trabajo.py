@@ -47,7 +47,6 @@ def opcua_client_thread(shared_data, endpoint_url, stop_event):
             val_senoidal = node_senoidal.read_value()
 
             shared_data.update_data(val_counter, val_random, val_senoidal)
-            # pequeño sleep para permitir comprobación del evento de parada
             time.sleep(0.05)
 
     except Exception as e:
