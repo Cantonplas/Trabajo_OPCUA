@@ -78,7 +78,7 @@ def opcua_server_thread(shared_data, ip, port, stop_event):
         while not stop_event.is_set():
             valor_actual = shared_data.get_senoidal()
             var_senoidal.write_value(valor_actual)
-            time.sleep(0.05)
+            time.sleep(0.1)
     except Exception as e:
         print(f"[Hilo 2] Error: {e}")
         time.sleep(1)
